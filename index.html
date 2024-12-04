@@ -6,7 +6,39 @@
     <title>Document</title>
 </head>
 <body>
-    <img src="./foto1 (1).jpeg" width="30%" alt="">
-    <a href="./foto1 (1).jpeg" download="Prueba">Descargar</a>
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Descargar Imágenes</title>
+    </head>
+    <body>
+
+        <h1>Album de imagenes</h1>
+    
+        <button id="downloadBtn">Descargar Imágenes</button>
+    
+        <script>
+            document.getElementById('downloadBtn').addEventListener('click', function() {
+                // URLs de las imágenes que quieres descargar
+                const imagenes = [
+                'foto1 (1).jpeg',
+                'foto1 (2).jpeg',
+                ];
+    
+                // Descargar cada imagen
+                imagenes.forEach(function(imagen) {
+                    const enlace = document.createElement('a');
+                    enlace.href = imagen;
+                    enlace.download = imagen.split('/').pop(); // Usar el nombre de archivo de la URL
+                    enlace.click();
+                });
+            });
+        </script>
+    
+    </body>
+    </html>
+    
 </body>
 </html>
